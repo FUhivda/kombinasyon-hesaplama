@@ -1,23 +1,27 @@
-# Compiled class file
-*.class
+ import java.util.Scanner;
+public class kombinasyonHesaplama {
+    public static void main(String[] args){
+        int n,r;
+        Scanner scan = new Scanner(System.in);
+        System.out.print("1.Sayıyı Giriniz: ");
+        n = scan.nextInt();
+        System.out.print("2.Sayıyı Giriniz: ");
+        r = scan.nextInt();
 
-# Log file
-*.log
+        int total2=1,total3=1,total4=1;
 
-# BlueJ files
-*.ctxt
+        for ( int i=1; i<=n; i++){
+           total2=total2*i;
+        }
+        for (int k=1 ; k<=r; k++){
+            total3=total3*k;
+        }
+        for (int j=1; j<=(n-r); j++){
+             total4=total4*j;
+        }
+          int total5= total2/(total3 * total4);
+        System.out.println("C(" +n+ "," +r+ ") : " +total5);
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
 
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+    }
+}
